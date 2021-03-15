@@ -1,17 +1,68 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// Import Stylesheet
+import "./index.css";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// const Greeting = () => {
+//   return (
+//     // <div>
+//     //   <h1> Blog Title </h1>
+//     //   <p> Blog Content </p>
+//     // </div>
+//     // <section>
+//     //   <h2>Blog Post</h2>
+//     //   <p>Blog Content</p>
+//     // </section>
+
+//     // Nested Component
+//     // <section>
+//     //   <Person />
+//     //   <Message />
+//     // </section>
+//   );
+// };
+
+//mini-component1
+// const Person = () => <h2>John Doe</h2>;
+// const Message = () => (
+//   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nam?</p>
+// );
+
+// Mini-Book Project
+
+// Main component
+const BookList = () => {
+  return (
+    <section className="bookList">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
+};
+
+// a book component: reusable
+const Book = () => {
+  return (
+    <article className="book">
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
+
+//image component
+const Image = () => {
+  return <img src="pad.jpg" alt="what" width="300px" />;
+};
+
+//title component
+const Title = () => <h2>Messi-Ronaldo Chronicles</h2>;
+
+//author component
+const Author = () => <h5>Peter Drury</h5>;
+
+ReactDOM.render(<BookList />, document.getElementById("root"));

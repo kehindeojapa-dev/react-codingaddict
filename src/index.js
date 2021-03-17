@@ -31,38 +31,47 @@ import "./index.css";
 
 // Mini-Book Project
 
+// Two Books
+const books = [
+  {
+    id: 1,
+    image: "pad.jpg",
+    title: "Messi-Ronaldo Chronicles",
+    author: "Peter Drury",
+  },
+  {
+    id: 2,
+    image: "stadium.jpg",
+    title: "Once in a lifetime",
+    author: "J.k. Rowling",
+  },
+];
 // Main component
 const BookList = () => {
   return (
+    // Use the map function to render each book
+    // gotten from the books array.
     <section className="bookList">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      {books.map((book) => {
+        // return <Book key={book.id} book={book} />;
+        // use the spread operator
+        return <Book key={book.id} {...book} />;
+      })}
     </section>
   );
 };
 
 // a book component: reusable
-const Book = () => {
+const Book = (props) => {
+  console.log(props);
+  const { image, title, author } = props;
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src={image} alt="" width="300px" />
+      <h2>{title}</h2>
+      <h5>{author}</h5>
     </article>
   );
 };
-
-//image component
-const Image = () => {
-  return <img src="pad.jpg" alt="what" width="300px" />;
-};
-
-//title component
-const Title = () => <h2>Messi-Ronaldo Chronicles</h2>;
-
-//author component
-const Author = () => <h5>Peter Drury</h5>;
 
 ReactDOM.render(<BookList />, document.getElementById("root"));

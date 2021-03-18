@@ -30,48 +30,35 @@ import "./index.css";
 // );
 
 // Mini-Book Project
+// Import the books list from book.js
+// import { books } from "./books";
+// // Import Book component from Book.js
+// import Book from "./Book";
 
-// Two Books
-const books = [
-  {
-    id: 1,
-    image: "pad.jpg",
-    title: "Messi-Ronaldo Chronicles",
-    author: "Peter Drury",
-  },
-  {
-    id: 2,
-    image: "stadium.jpg",
-    title: "Once in a lifetime",
-    author: "J.k. Rowling",
-  },
-];
-// Main component
-const BookList = () => {
-  return (
-    // Use the map function to render each book
-    // gotten from the books array.
-    <section className="bookList">
-      {books.map((book) => {
-        // return <Book key={book.id} book={book} />;
-        // use the spread operator
-        return <Book key={book.id} {...book} />;
-      })}
-    </section>
-  );
-};
+// // Main component
+// const BookList = () => {
+//   return (
+//     // Use the map function to render each book
+//     // gotten from the books array.
+//     <section className="bookList">
+//       {books.map((book) => {
+//         // return <Book key={book.id} book={book} />;
+//         // use the spread operator
+//         return <Book key={book.id} {...book} />;
+//       })}
+//     </section>
+//   );
+// };
 
-// a book component: reusable
-const Book = (props) => {
-  console.log(props);
-  const { image, title, author } = props;
-  return (
-    <article className="book">
-      <img src={image} alt="" width="300px" />
-      <h2>{title}</h2>
-      <h5>{author}</h5>
-    </article>
-  );
-};
+// // a book component: reusable
+import Setup from "./tutor/UseState-Object";
 
-ReactDOM.render(<BookList />, document.getElementById("root"));
+// useBasic
+
+// ReactDOM.render(<BookList />, document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <Setup />
+  </React.StrictMode>,
+  document.getElementById("root")
+);

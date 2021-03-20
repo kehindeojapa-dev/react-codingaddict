@@ -51,7 +51,7 @@ import "./index.css";
 // };
 
 // // a book component: reusable
-import Setup from "./tutor/UseState-Object";
+import Setup from "./tutor/UseState-Counter";
 
 // useBasic
 

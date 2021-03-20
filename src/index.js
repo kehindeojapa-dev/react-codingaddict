@@ -51,14 +51,15 @@ import "./index.css";
 // };
 
 // // a book component: reusable
-import Setup from "./tutor/UseState-Counter";
-
+import Setup from "./tutor/Conditional/short-circuit";
 // useBasic
 
 // ReactDOM.render(<BookList />, document.getElementById("root"));
 ReactDOM.render(
   <React.StrictMode>
-    <Setup />
+    <div className="container">
+      <Setup />
+    </div>
   </React.StrictMode>,
   document.getElementById("root")
 );

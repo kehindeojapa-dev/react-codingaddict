@@ -51,7 +51,7 @@ import "./index.css";
 // };
 
 // // a book component: reusable
-import Setup from "./tutor/Conditional/short-circuit";
+import Setup from "./tutor/Form/MultipleInput";
 // useBasic
 
 // ReactDOM.render(<BookList />, document.getElementById("root"));

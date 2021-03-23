@@ -10,39 +10,28 @@ const CreateList = () => {
     email: "",
   });
   const [people, setPeople] = useState([]);
-  const [count, setCount] = useState(0);
-  const handleForm = (e) => {
-    setCount(count + 1);
-    e.preventDefault();
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    if (email && name) {
-      // people.push({
-      //   id: count,
-      //   name: name,
-      //   email: email,
-      // });
-
-      //or
-      const person = {
-        id: count,
-        name,
-        email,
-      };
-      setPeople((people) => {
-        return [...people, person];
-      });
-    }
-    console.log(people);
-    // setEmail("");
-    // setName("");
-  };
 
   const handleChange = (e) => {
     let name = e.target.name;
     let value = e.target.value;
-    console.log(`${name}: ${value}`);
+    setPerson({ ...person, [name]: value });
   };
+
+  const handleForm = (e) => {
+    e.preventDefault();
+    if (person.name && person.age && person.email) {
+      // const { name, age, email } = person;
+      const newEntry = {
+        id: new Date().getTime().toLocaleString(),
+        ...person,
+      };
+      setPeople((people) => {
+        return [...people, newEntry];
+      });
+      setPerson({ name: "", age: "", email: "" });
+    }
+  };
+
   return (
     <>
       <h2>Create a List</h2>
@@ -84,10 +73,11 @@ const CreateList = () => {
           </button>
         </form>
         {people.map((person) => {
-          const { id, name, email } = person;
+          const { id, name, email, age } = person;
           return (
             <div key={id} className="item">
               <h4>{name}</h4>
+              <h2>{age}</h2>
               <p>{email}</p>
             </div>
           );

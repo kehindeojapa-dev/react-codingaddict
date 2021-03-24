@@ -51,7 +51,7 @@ import "./index.css";
 // };
 
 // // a book component: reusable
-import Setup from "./tutor/6-useReducer";
+import Setup from "./tutor/10-propTypes";
 // useBasic
 
 // ReactDOM.render(<BookList />, document.getElementById("root"));
